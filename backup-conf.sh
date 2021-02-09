@@ -27,7 +27,7 @@ rm -rf ./config/*
 
 echo "> Backup .env files..."
 shopt -s dotglob
-find $dirProjects* -prune -type d | while IFS= read -r d; do 
+find $dirProjects* -prune -type d | while IFS= read -r d; do
   dirName=$(echo "$d" | grep -oP "^$dirProjects\K.*")
   envPath="${d}/shared/.env"
   cp $envPath "./env/${dirName}_day_${dayNumber}.env" 2>/dev/null || :
@@ -61,5 +61,5 @@ cp /etc/nginx/fastcgi_params "./config/fastcgi_params_day_${dayNumber}"
 cp /etc/nginx/fastcgi_params "./config/fastcgi_params_week_${weekNumber}"
 
 echo "> Upload ${dirBackups} to Google Cloud Storage into gs://${bucket}/conf"
-gsutil -m cp -c -n -r $dirBackups gs://$bucket/conf > /dev/null 2>&1
+gsutil -m cp -c -n -r $dirBackups gs://$bucket/ > /dev/null 2>&1
 echo "> DONE!"
