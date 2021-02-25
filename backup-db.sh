@@ -1,4 +1,7 @@
 #!/bin/bash
+PATH=/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/google-cloud-sdk/bin
+HOME=/root
+
 pw="mysql-secret"
 bucket="pmk-server-1"
 logfile="gsutil.log"
@@ -9,7 +12,7 @@ PATH=/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/google-cloud-sdk/bin
 HOME=/root
 
 echo "" > $logfile
-chown webuser:webuser $logfile 
+chown webuser:webuser $logfile
 skip_db=("Database" "information_schema" "mysql" "performance_schema" "sys")
 
 for dbname in `echo show databases| mysql -uroot -p$pw`; do

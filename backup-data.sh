@@ -1,9 +1,9 @@
 #!/bin/bash
-bucket="pmk-server-1"
-projectsDir="/var/www"
-
 PATH=/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/google-cloud-sdk/bin
 HOME=/root
+
+bucket="pmk-server-1"
+projectsDir="/var/www"
 
 cd $projectsDir
 

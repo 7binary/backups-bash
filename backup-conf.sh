@@ -1,4 +1,7 @@
 #!/bin/bash
+PATH=/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/google-cloud-sdk/bin
+HOME=/root
+
 bucket="pmk-server-1"
 dirProjects="/var/www/"
 dirBackups="/home/webuser/.backups/conf"
