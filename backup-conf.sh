@@ -64,5 +64,5 @@ cp /etc/nginx/fastcgi_params "./config/fastcgi_params_day_${dayNumber}"
 cp /etc/nginx/fastcgi_params "./config/fastcgi_params_week_${weekNumber}"
 
 echo "> Upload ${dirBackups} to Google Cloud Storage into gs://${bucket}/conf"
-gsutil -m cp -c -n -r $dirBackups gs://$bucket/ > /dev/null 2>&1
+gsutil -m cp -c -r $dirBackups gs://$bucket/ > /dev/null 2>&1
 echo "> DONE!"
