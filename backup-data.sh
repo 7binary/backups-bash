@@ -7,12 +7,12 @@ projectsDir="/var/www"
 
 cd $projectsDir
 
-for project in * ; do
+for project in */ ; do
     echo ""
-    echo "... upload ${project}/shared/data-protected to ${bucket}"
-    gsutil -m cp -c -n -r $projectsDir/$project/shared/data-protected gs://$bucket/$project/data-protected > /dev/null 2>&1
+    echo "... upload ${project}shared/data-protected to ${bucket}"
+    gsutil -m cp -c -n -r $projectsDir/$project/shared/data-protected gs://$bucket/$project/ > /dev/null 2>&1
     echo "+++ exported!"
-    echo "... upload ${project}/shared/data to ${bucket}"
-    gsutil -m cp -c -n -r $projectsDir/$project/shared/data gs://$bucket/$project/data > /dev/null 2>&1
+    echo "... upload ${project}shared/data to ${bucket}"
+    gsutil -m cp -c -n -r $projectsDir/$project/shared/data gs://$bucket/$project/ > /dev/null 2>&1
     echo "+++ exported!"
 done
